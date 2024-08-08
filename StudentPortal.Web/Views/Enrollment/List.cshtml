@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Enrollments";
+}
+
+@model List<StudentPortal.Web.Models.Entities.Enrollment>
+
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible">
+
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+
+        @TempData["Success"]
+    </div>
+}
+
+<div style="display:flex; align-items:center;">
+    <div style="flex:1;">
+        <h1>Enrollment</h1>
+    </div>
+    <div style="flex:1; text-align:end;">
+        <a class="btn btn-primary" asp-action="Add">Add Enrollment</a>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var enrollment in Model)
+        {
+            <tr>
+                <td>@enrollment.Id</td>
+                <td>@enrollment.Student?.Name</td>
+                <td>@enrollment.Course?.Title</td>
+                <td>@enrollment.Grade</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@enrollment.Id">Edit</a>
+
+                    <a class="btn btn-danger ms-3" asp-action="Delete" asp-route-id="@enrollment.Id">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table> 

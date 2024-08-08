@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Edit Course";
+}
+
+@model StudentPortal.Web.Models.Entities.Course
+
+<h1>Edit Course</h1>
+
+@if (Model is null)
+{
+    <p>No course was found</p>
+}
+else
+{
+    <form method="post">
+        <div class="mt-3">
+            <label class="form-label">Id</label>
+            <input type="text" class="form-control" asp-for="Id" readonly />
+        </div>
+        <div class="mt-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Credits</label>
+            <input type="number" class="form-control" asp-for="Credits" />
+            <span asp-validation-for="Credits" class="text-danger"></span>
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a type="submit" class="btn btn-secondary" asp-action="List">Cancel</a>
+        </div>
+    </form>
+}
