@@ -21,10 +21,8 @@ namespace StudentPortal.Web.Models.Entities
         [Required]
         public Grade? Grade { get; set; }
 
-        [Required]
         public Course? Course { get; set; }
 
-        [Required]
         public Student? Student { get; set; }
 
     }

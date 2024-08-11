@@ -81,7 +81,7 @@ namespace StudentPortal.Web.Controllers
                 await dbContext.SaveChangesAsync();
 
 
-                TempData["Success"] = "Enrollment deleted successfully!";
+                TempData["Success"] = "Enrollment created successfully!";
 
                 return RedirectToAction("List", "Enrollment");
             }
@@ -140,7 +140,7 @@ namespace StudentPortal.Web.Controllers
 
                 await dbContext.SaveChangesAsync();
 
-                TempData["Success"] = "Enrollment deleted successfully!";
+                TempData["Success"] = "Enrollment updated successfully!";
 
                 return RedirectToAction("List", "Enrollment");
 
